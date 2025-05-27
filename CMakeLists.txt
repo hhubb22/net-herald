@@ -6,8 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Vcpkg integration
-find_package(fmt CONFIG REQUIRED)
+find_package(spdlog CONFIG REQUIRED)
 
-add_executable(net-herald main.cc)
+add_executable(net-herald src/main.cc)
 
-target_link_libraries(net-herald PRIVATE fmt::fmt)
+target_link_libraries(net-herald PRIVATE spdlog::spdlog pcap)
+
